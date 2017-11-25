@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to E-Contracts</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://bootswatch.com/4/flatly/bootstrap.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"><%= title %></div>
+            </div>
+            <% for(continent in countries) {%>
+                <div id="continent" class="row">
+                </div>
+                <li><%= continent %></li>
+            <% } %>
+            <div class="row">
+                <div class="col-md-12"><%=  %></div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous'></script>
+    <script src='js/main.js'></script>
+</body>
+
+</html>
