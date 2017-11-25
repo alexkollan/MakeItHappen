@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const index = require('./index');
 const screen2 = require('./screen2');
 const screen3 = require('./screen3');
+const screen4 = require('./screen4');
+const screen6 = require('./screen6');
+const screen7 = require('./screen7');
 
 app.listen(port, () => {
     console.log(`The app is running on port: ${port}`);
@@ -23,3 +26,6 @@ app.set('view engine', 'ejs');
 app.get('/', index.controller);
 app.get('/screen2', screen2.controller);
 app.get('/screen3', screen3.controller);
+app.get('/screen4', screen4.controller);
+app.get('/screen6', screen6.controller);
+app.get('/screen7', screen7.controller);

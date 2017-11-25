@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to E-Contracts</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link href='https://bootswatch.com/4/flatly/bootstrap.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+    <style>
+        .hospital {
+            background-color: white;
+            color: #1c1c1c;
+            padding: 0.5rem;
+            border: 1px solid var(--info);
+            border-radius: 0.25rem;
+            transition: all 0.15s;
+            cursor: default;
+            user-select: none;
+        }
+        .hospital.selected {
+            background-color: var(--info);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div class="py-5 container">
+            <div class="row mb-3">
+                <h3 class="col-md-12 text-gray-dark font-weight-normal">Επιλογή Νοσοκομείων</h3>
+            </div>
+            <div class="row py-2 px-5">
+                <div id="select-all-hospitals" class="btn btn-outline-info">Select all</div>
+            </div>
+            <div class="row py-3 d-flex flex-wrap">
+                <div class="col-md-3 text-center p-2"><div class="hospital">ΙΑΣΩ</div></div>
+                <div class="col-md-3 text-center p-2"><div class="hospital">ΥΓΕΙΑ</div></div>
+                <div class="col-md-3 text-center p-2"><div class="hospital">Metropolitan</div></div>
+                <div class="col-md-3 text-center p-2"><div class="hospital">Κεντρική Κλινική Αθηνών</div></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src='js/main.js'></script>
+    <script>
+        $("body").on("click", ".hospital", function(){
+            $(this).toggleClass("selected");
+        });
+        $("#select-all-hospitals").on("click", function(){
+            $(".hospital").addClass("selected");
+        });
+    </script>
+</body>
+
+</html>
