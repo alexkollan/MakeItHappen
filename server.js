@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const index = require('./index');
+const screen3 = require('./screen2');
 const screen3 = require('./screen3');
 
 app.listen(port, () => {
@@ -20,4 +21,5 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 
 app.get('/', index.controller);
+app.get('/screen2', screen3.controller);
 app.get('/screen3', screen3.controller);
