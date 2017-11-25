@@ -33,3 +33,4 @@ app.get('/screen6', screen6.controller);
 app.get('/screen7', screen7.controller);
 
 app.post('/screen2', screen2.controller);
+app.post('/screen3', screen3.controller);

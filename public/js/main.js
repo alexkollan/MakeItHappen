@@ -23,6 +23,13 @@ var api = {
             data: data
         }, callback);
     },
+    getScreen3: function (data, callback) {
+        this.ajax({
+            url: "/screen3",
+            method: "POST",
+            data: data
+        }, callback);
+    },
 };
 
 var app = {
@@ -49,7 +56,39 @@ var app = {
             if (data.success) {
                 $("#wrapper").append(data.html);
                 $("#to-step-2").hide();
-                $("#user_id").attr("disabled");
+                $("#user_id").attr("disabled", "");
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
+    loadScreen3: function(){
+        let name = $("#name").val();
+        let vat = $("#vat").val();
+        let amka = $("#amka").val();
+        let birth_date = $("#birth-date").val();
+        let telephone = $("#telephone").val();
+        let profession = $("#profession").val();
+        if (!user_id || vat || amka || birth_date || telephone || profession) {
+            return app.alert("Κάποιο πεδίο είναι άδειο");
+        }
+        api.getScreen3({
+            name: name,
+            vat: vat,
+            amka: amka,
+            birth_date: birth_date,
+            telephone: telephone,
+            profession: profession
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-2").hide();
+                $("#name").attr("disabled", "");
+                $("#vat").attr("disabled", "");
+                $("#amka").attr("disabled", "");
+                $("#birth-date").attr("disabled", "");
+                $("#telephone").attr("disabled", "");
+                $("#profession").attr("disabled", "");
             } else {
                 app.alert(data.description);
             }
@@ -57,6 +96,7 @@ var app = {
     },
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
+        $("body").on("click", "#to-step-3", app.loadScreen3);
     }
 };
 $(document).ready(function(){

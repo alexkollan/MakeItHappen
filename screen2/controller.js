@@ -15,32 +15,32 @@ module.exports = (req, res) => {
                 <h1 class="mb-4">ΕΠΙΒΕΒΑΙΩΣΗ ΔΕΔΟΜΕΝΩΝ</h1>
             </div>
             <div class="col-md-12 d-flex flex-wrap">    
-                <div class="col-md-6 mb-3">
-                    <label>ΟΝΟΜΑΤΕΠΩΝΥΜΟ</label>
-                    <input type="email" class="form-control" placeholder="Ονοματεπώνυμο">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΟΝΟΜΑΤΕΠΩΝΥΜΟ</label>
+                    <input id="name" type="text" class="form-control" placeholder="Ονοματεπώνυμο">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>ΑΦΜ</label>
-                    <input type="password" class="form-control" placeholder="ΑΦΜ">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΑΦΜ</label>
+                    <input id="vat" type="text" class="form-control" placeholder="ΑΦΜ">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>ΑΜΚΑ</label>
-                    <input type="email" class="form-control" placeholder="ΑΜΚΑ">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΑΜΚΑ</label>
+                    <input id="amka" type="text" class="form-control" placeholder="ΑΜΚΑ">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</label>
-                    <input type="password" class="form-control" placeholder="Ημερομηνία Γέννησης">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</label>
+                    <input id="birth-date" type="text" class="form-control" placeholder="Ημερομηνία Γέννησης">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>ΤΗΛΕΦΩΝΟ</label>
-                    <input type="email" class="form-control" placeholder="Τηλέφωνο">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΤΗΛΕΦΩΝΟ</label>
+                    <input id="telephone" type="text" class="form-control" placeholder="Τηλέφωνο">
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label>ΕΠΑΓΓΕΛΜΑ</label>
-                    <input type="email" class="form-control" placeholder="Επάγγελμα">
+                <div class="col-md-6 mb-3 text-left">
+                    <label class="pl-2">ΕΠΑΓΓΕΛΜΑ</label>
+                    <input id="profession" type="text" class="form-control" placeholder="Επάγγελμα">
                 </div>
-                <div class="col-md-12">
-                    <button type="submit" class="m-auto btn btn-secondary">ΕΠΙΒΕΒΑΙΩΣΗ</button>
+                <div class="col-md-12 py-3">
+                    <button id="to-step-3" type="submit" class="m-auto btn btn-secondary">Επόμενο</button>
                 </div>
             </div>
         </div>
