@@ -26,8 +26,10 @@ app.set('view engine', 'ejs');
 
 app.get('/', index.controller);
 app.get('/screen1', screen1.controller);
-app.get('/screen2', screen2.controller);
+// app.get('/screen2', screen2.controller);
 app.get('/screen3', screen3.controller);
 app.get('/screen4', screen4.controller);
 app.get('/screen6', screen6.controller);
 app.get('/screen7', screen7.controller);
+
+app.post('/screen2', screen2.controller);

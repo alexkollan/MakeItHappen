@@ -10,31 +10,20 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div class="py-5 text-white bg-primary text-center h-100">
+    <div id="message-container"></div>
+    <div id="wrapper" class="bg-primary">
+        <div class="py-5 text-white bg-primary text-center h-100 my-0">
             <div class="container">
-                <div class="row"> </div>
                 <div class="row">
-                    <div class="col-md-12 my-0">
-                        <h1>ΔΗΜΙΟΥΡΓΙΑ ΣΥΜΒΟΛΑΙΟΥ</h1>
-                        <p class="lead mb-4">Επιλέξτε περιοχές κάλυψης</p>
-                        <div class="btn-group">
-                            <button id="placeHolderBtn" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> ΕΠΙΛΕΞΤΕ ΗΠΕΙΡΟ... </button>
-                            <div id="list" class="dropdown-menu">
-                                <a class="dropdown-item" onclick="selContinent('eur')" href="#">ΕΥΡΩΠΗ</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" onClick="selContinent('us')" href="#">ΑΜΕΡΙΚΗ</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" onclick="selContinent('asia')" href="#">ΑΣΙΑ</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" onclick="selContinent('aus')" href="#">ΑΥΣΤΡΑΛΙΑ</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" onclick="selContinent('afr')" href="#">ΑΦΡΙΚΗ</a>
-                            </div>
+                    <div class="col-md-12">
+                        <h1 class="m-5">ΑΝΑΓΝΩΡΙΣΗ ΣΤΟΙΧΕΙΩΝ</h1>
+                        <p class="lead mb-4">Εισάγετε Τηλέφωνο, Email, ΑΦΜ ή ΑΜΚΑ</p>
+                        <div class="input-group w-50 mx-auto">
+                            <input id="user_id" type="text" class="form-control w-25" placeholder="Εισαγωγή αριθμού...">
+                            <span class="input-group-btn">
+                                <button id="to-step-2" class="btn btn-secondary" type="button">Επόμενο</button>
+                            </span>
                         </div>
-                        <form class="form-inline justify-content-center">
-                            <button type="submit" class="btn btn-secondary">Επόμενο</button>
-                        </form>
                     </div>
                 </div>
             </div>
