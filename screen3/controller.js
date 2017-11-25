@@ -1,26 +1,26 @@
 module.exports = (req, res) => {
     let title = "Επιλέξτε Περιοχές Κάλυψης"
     let countries = {
-        "America": [
-            "United States",
-            "Canada",
-            "Mexico",
-            "Brazil",
-            "Argentine",
-            "Colombia",
+        "Αμερική": [
+            "Ηνωμένες Πολιτείες",
+            "Καναδάς",
+            "Μεξικό",
+            "Βραζιλία",
+            "Αργεντινή",
+            "Κολομβία",
         ],
-        "Europe": [
-            "Greece",
-            "Belgium",
-            "Germany",
-            "Spain",
-            "Italy",
-            "United Kingdom",
-            "Switzerland",
+        "Ευρώπη": [
+            "Έλλαδα",
+            "Βέλγιο",
+            "Γερμανία",
+            "Ισπανία",
+            "Ιταλία",
+            "Ηνωμένο Βασίλειο",
+            "Ελβετία",
         ],
-        "Asia": [],
-        "Africa": [],
-        "Oceania": [],
+        "Ασία": [],
+        "Αφρική": [],
+        "Ωκεανία": [],
     };
     res.render(__dirname + '/view.ejs', {
         title: title,
