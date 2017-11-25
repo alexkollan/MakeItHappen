@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 
 app.set('view engine', 'ejs');
 
-app.get('/', index.controller);
+app.get('/', screen1.controller);
 app.get('/screen1', screen1.controller);
 app.get('/screen2', screen2.controller);
 app.get('/screen3', screen3.controller);
