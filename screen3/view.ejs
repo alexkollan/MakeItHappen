@@ -5,8 +5,14 @@
     <title>Welcome to E-Contracts</title>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link href='https://bootswatch.com/4/flatly/bootstrap.css' rel='stylesheet'>
     <link href='css/style.css' rel='stylesheet'>
+    <style>
+        .hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,22 +20,89 @@
     <div id="wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-12"><%= title %></div>
+                <h3 class="col-md-12 text-gray-dark font-weight-normal"><%= title %></h3>
             </div>
-            <% for(continent in countries) {%>
-                <div id="continent" class="row">
+            <% for(continent in countries) { %>
+                <div id="<%= continent %>" class="continent row border border-info rounded pt-2 mb-3">
+                    <div class="col-md-12 h4 font-weight-normal d-flex">
+                        <div class="">
+                            <input class="check-all-countries" id="continent-<%= continent %>" type="checkbox">
+                            <label for="continent-<%= continent %>"><%= continent %></label>
+                        </div>
+                        <div class="ml-auto">
+                            <div class="btn btn-info toggle-content">
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="country-list offset-md-1 col-md-11 d-flex flex-wrap hidden">
+                        <% for(var i=0; i < countries[continent].length; i++) { %>
+                            <div class="col-md-3">
+                                <input id="country-<%= continent %>-<%= i %>" class="country" type="checkbox">
+                                <label for="country-<%= continent %>-<%= i %>"><%= countries[continent][i] %></label>
+                            </div>
+                        <% } %>
+                    </div>
                 </div>
-                <li><%= continent %></li>
             <% } %>
-            <div class="row">
-                <div class="col-md-12"><%=  %></div>
-            </div>
         </div>
     </div>
 
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src='js/main.js'></script>
+    <script>
+        
+        // Function to toggle display of country list div
+        function toggleContent (elem, forced) {
+            if (forced === true || !$(elem).parents(".continent").find(".country-list").is(":visible")) {
+                $(elem).parents(".continent").find(".country-list").removeClass("hidden");
+            } else {
+                $(elem).parents(".continent").find(".country-list").addClass("hidden");
+            }
+        }
+        
+        // Function to toggle the icon of the continent
+        function toggleIcon (elem, shown) {
+            if (shown == true) {
+                $(elem).find("i.fa").addClass("fa-chevron-down").removeClass("fa-chevron-up");
+            } else if (shown == false) {
+                $(elem).find("i.fa").addClass("fa-chevron-up").removeClass("fa-chevron-down");
+            } else {
+                $(elem).find("i.fa").toggleClass("fa-chevron-up fa-chevron-down");
+            }
+        }
+        
+        // If font awesome icon is clicked toggle the icon appropriately
+        $("body").on("click", ".toggle-content", function(){
+            toggleContent(this);
+            if ($(this).parents(".continent").find(".country-list").is(":visible")) {
+                toggleIcon(this, false);
+            } else {
+                toggleIcon(this, true);
+            }
+        });
+        
+        // If the continent checkbox is ticked, open the country list div and check all
+        $("body").on("change", ".check-all-countries", function(){
+            toggleContent(this, true);
+            toggleIcon($(this).parents(".continent"), false);
+            $(this).parents(".continent").find(".country-list input[type=checkbox]").prop('checked', $(this).prop('checked'));
+        });
+        
+        // On country checkbox tick check whether all countries of the checkbox are ticked
+        // if yes, then check the continent checkbox
+        // otherwise uncheck it
+        $("body").on("change", ".country", function(){
+            let parent = $(this).parents(".continent");
+            if (parent.find(".country-list input[type=checkbox]").length === parent.find(".country-list input[type=checkbox]:checked").length) {
+                parent.find(".check-all-countries").prop("checked", true);
+            } else {
+                parent.find(".check-all-countries").prop("checked", false);
+            }
+        });
+    </script>
 </body>
 
 </html>

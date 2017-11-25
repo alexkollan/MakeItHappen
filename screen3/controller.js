@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-    let title = "My awesome title"
+    let title = "Επιλέξτε Περιοχές Κάλυψης"
     let countries = {
         "America": [
             "United States",
@@ -7,7 +7,7 @@ module.exports = (req, res) => {
             "Mexico",
             "Brazil",
             "Argentine",
-            "Colombia"
+            "Colombia",
         ],
         "Europe": [
             "Greece",
