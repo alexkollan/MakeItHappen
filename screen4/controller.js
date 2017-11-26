@@ -5,6 +5,7 @@ module.exports = (req, res) => {
     <div class="container">
         <div class="row mb-3">
             <h1 class="col-md-12 text-gray-dark">ΕΠΙΛΟΓΗ ΝΟΣΟΚΟΜΕΙΩΝ</h1>
+            <img class="m-auto" style="background-color: var(--primary);" src="icons/hospital.png" alt="hospital">
         </div>
         <div class="row py-2 px-5">
             <div id="select-all-hospitals" class="btn btn-outline-primary">Select all</div>

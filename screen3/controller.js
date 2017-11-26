@@ -28,6 +28,7 @@ module.exports = (req, res) => {
     <div class="container">
         <div class="row mb-4">
             <h1 class="col-md-12 text-gray-dark"><%= title %></h1>
+            <img class="m-auto" src="icons/world.png" alt="world">
         </div>
         <% for(continent in countries) { %>
             <div id="<%= continent %>" class="continent bg-light text-dark row rounded pt-2 mb-3">
