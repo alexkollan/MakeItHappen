@@ -97,8 +97,65 @@ var app = {
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
+        
+        // If font awesome icon is clicked toggle the icon appropriately
+        $("body").on("click", ".toggle-content", function(){
+            app.toggleContent(this);
+            if ($(this).parents(".continent").find(".country-list").is(":visible")) {
+                app.toggleIcon(this, false);
+            } else {
+                app.toggleIcon(this, true);
+            }
+        });
+
+        // If the continent checkbox is ticked, open the country list div and check all
+        $("body").on("change", ".check-all-countries", function(){
+            app.toggleContent(this, true);
+            app.toggleIcon($(this).parents(".continent"), false);
+            $(this).parents(".continent").find(".country-list input[type=checkbox]").prop('checked', $(this).prop('checked'));
+        });
+
+        // On country checkbox tick check whether all countries of the checkbox are ticked
+        // if yes, then check the continent checkbox
+        // otherwise uncheck it
+        $("body").on("change", ".country", function(){
+            let parent = $(this).parents(".continent");
+            if (parent.find(".country-list input[type=checkbox]").length === parent.find(".country-list input[type=checkbox]:checked").length) {
+                parent.find(".check-all-countries").prop("checked", true);
+            } else {
+                parent.find(".check-all-countries").prop("checked", false);
+            }
+        });
+        
+        // Select hospital on click
+        $("body").on("click", ".hospital", function(){
+            $(this).toggleClass("selected");
+        });
+        // If select all button is clicked, select all hospitals
+        $("#select-all-hospitals").on("click", function(){
+            $(".hospital").addClass("selected");
+        });
+    },
+    // Function to toggle display of country list div
+    toggleContent: function (elem, forced) {
+        if (forced === true || !$(elem).parents(".continent").find(".country-list").is(":visible")) {
+            $(elem).parents(".continent").find(".country-list").removeClass("hidden");
+        } else {
+            $(elem).parents(".continent").find(".country-list").addClass("hidden");
+        }
+    },
+    // Function to toggle the icon of the continent
+    toggleIcon: function(elem, shown) {
+        if (shown == true) {
+            $(elem).find("i.fa").addClass("fa-chevron-down").removeClass("fa-chevron-up");
+        } else if (shown == false) {
+            $(elem).find("i.fa").addClass("fa-chevron-up").removeClass("fa-chevron-down");
+        } else {
+            $(elem).find("i.fa").toggleClass("fa-chevron-up fa-chevron-down");
+        }
     }
 };
+
 $(document).ready(function(){
     app.events();
 });
