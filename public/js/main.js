@@ -192,6 +192,19 @@ var app = {
             }
         })
     },
+    loadScreen8: function(){
+        // let contract_type = $(".contract-type.btn-primary").html("ΕΤΗΣΙΟ") ? true : false;
+        api.getScreen8({
+            // contract_type: contract_type
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-8").hide();
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
     initSlider: function() {
         $("#selector").slider({
             range: true,
@@ -205,6 +218,34 @@ var app = {
         });
         $("#amount").html("€" + $("#selector").slider("values", 0) + " - €" + $("#selector").slider("values", 1));
     },
+    erwtiseisKapnismatos: function(a) {
+        
+        if (a =='y'){
+            $('#erwtKapn1 , #erwtKapn2').removeClass('hidden')
+        }
+        else if(a == 'n'){
+            $('#erwtKapn1 , #erwtKapn2').addClass('hidden')
+        }
+    },
+    
+    erwtiseisKarkinou: function(b){
+        if (b == 'y'){
+            $('#erwtKark1 , #erwtKark2, #erwtKark3' ).removeClass('hidden')
+        }
+        else if(b == 'n'){
+            $('#erwtKark1 , #erwtKark2, #erwtKark3' ).addClass('hidden')
+        }
+    },
+    
+    erwtiseisDiaviti: function(c){
+        if (c == 'y'){
+            $('#erwtDiav1 , #erwtDiav2, #erwtDiav3' ).removeClass('hidden')
+        }
+        else if(c == 'n'){
+            $('#erwtDiav1 , #erwtDiav2, #erwtDiav3' ).addClass('hidden')
+        }
+    },
+    
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
@@ -212,7 +253,7 @@ var app = {
         $("body").on("click", "#to-step-5", app.loadScreen5);
         $("body").on("click", "#to-step-6", app.loadScreen6);
         $("body").on("click", "#to-step-7", app.loadScreen7);
-        // $("body").on("click", "#to-step-8", app.loadScreen8);
+        $("body").on("click", "#to-step-8", app.loadScreen8);
         
         // If font awesome icon is clicked toggle the icon appropriately
         $("body").on("click", ".toggle-content", function(){

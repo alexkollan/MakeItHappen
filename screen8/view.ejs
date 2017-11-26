@@ -2,31 +2,101 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
 
 <body>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card text-white p-5 bg-primary">
-            <div class="card-body">
-              <h1 class="mb-4">ΠΡΟΣΘΕΣΤΕ ΚΑΛΥΨΕΙΣ</h1>
-              <div class="checkbox"> <label><input type="checkbox" value=""> Επίδομα Τοκετού</label> </div>
-              <div class="checkbox"> <label><input type="checkbox" value=""> Επίδομα Αναπηρίας</label> </div>
-              <div class="checkbox"> <label><input type="checkbox" value=""> Επίδομα Ανάρρωσης</label> </div>
-              <div class="checkbox"> <label><input type="checkbox" value=""> Πρόσθετα Μέλη</label> </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-white p-5 bg-primary h-100">
+                        <div class="card-body">
+                            <h1 class="mb-4">ΕΡΩΤΗΜΑΤΟΛΟΓΙΟ ΥΓΕΙΑΣ</h1>
+                            <p class="lead">Βάρος / Ύψος: </p>
+                            <input type="text">
+                            <p class="lead">Είστε καπνιστής; </p>
+                            <form>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisKapnismatos('y')" value="on">Ναι</label>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisKapnismatos('n')" value="on">Όχι</label>
+                            </form>
+
+                            <div class="hidden" id="erwtKapn1">
+                                <p class="lead">Πόσο καιρό καπνίζετε; </p>
+                                <input type="text">
+                            </div>
+                            <div class="hidden" id="erwtKapn2">
+                                <p class="lead">Πόσα τσιγάρα την ημέρα; </p>
+                                <input type="text">
+                            </div>
+                            <p class="lead">Έχετε ή είχατε διερευνηθεί, διαγνωσθεί ή θεραπευθεί για θέματα καρκίνου; </p>
+                            <form>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisKarkinou('y')" value="on">Ναι</label>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisKarkinou('n')" value="on">Όχι</label>
+                            </form>
+                            <div class="hidden" id="erwtKark1">
+                                <p class="lead">Αναλυτική περιγραφή</p>
+                                <textarea class="span6" rows="3" placeholder=""></textarea>
+                            </div>
+                            <div class="hidden" id="erwtKark2">
+                                <p class="lead">Χρονολογία περιστατικού </p>
+                                <input type="text">
+                            </div>
+                            <div class="hidden" id="erwtKark3">
+                                <p class="lead">Σημερινή κατάσταση:
+                                    <form>
+                                        <input type="radio" name="optradio" onchange="erwtiseisKarkinouBool('simKat')" value="on">Σταθερή</label>
+                                        <input type="radio" name="optradio" onchange="erwtiseisKarkinouBool('ypoPar')" value="on">Υπό παρακολούθηση</label>
+                                    </form>
+                            </div>
+                            <p class="lead">Έχετε ή είχατε διερευνηθεί, διαγνωσθεί ή θεραπευθεί για θέματα διαβήτη; </p>
+                            <form>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisDiaviti('y')" value="on">Ναι</label>
+                                <label class="radio-inline">
+                  				<input type="radio" name="optradio" onchange="erwtiseisDiaviti('n')" value="on">Όχι</label>
+                            </form>
+                            <div class="hidden" id="erwtDiav1">
+                                <p class="lead">Αναλυτική περιγραφή</p>
+                                <textarea class="span6" rows="3" placeholder=""></textarea>
+                            </div>
+                            <div class="hidden" id="erwtDiav2">
+                                <p class="lead">Χρονολογία περιστατικού </p>
+                                <input type="text">
+                            </div>
+                            <div class="hidden" id="erwtDiav3">
+                                <p class="lead">Σημερινή κατάσταση:
+                                    <form>
+                                        <input type="radio" name="optradio" onchange="erwtiseisKarkinouBool('simKat')" value="on">Σταθερή</label>
+                                        <input type="radio" name="optradio" onchange="erwtiseisKarkinouBool('ypoPar')" value="on">Υπό παρακολούθηση</label>
+                                    </form>
+                            </div>
+                            <p class="lead">Συμμετέχετε σε: </p>
+                            <input type="checkbox"> Αθλήματα
+                            <input type="checkbox"> Επικίνδυνες Δραστηριότητες
+                            <input type="checkbox"> Αγώνες Ταχύτητας
+                            <input type="checkbox"> Πτήσεις
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    </div>
-  </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+
 </body>
 
 </html>
