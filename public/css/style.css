@@ -17,6 +17,7 @@
     flex-direction: column-reverse;
     justify-content: center;
     padding: 1rem;
+    z-index: 99999;
 }
 
 .message {
@@ -41,4 +42,31 @@
 .hospital.selected {
     background-color: var(--primary);
     color: white;
+}
+
+:root {
+    --primary: #4C8989;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+.btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-secondary {
+    background-color: #0e5c52 !important;
+    border-color: #0e5c52 !important;
 }

@@ -4,7 +4,7 @@ module.exports = (req, res) => {
 <div class="py-5 text-dark bg-light text-center h-100 my-0">
     <div class="container">
         <div class="row mb-3">
-            <h1 class="col-md-12 text-gray-dark">ΕΠΙΛΟΓΗ ΝΟΣΟΚΟΜΕΙΩΝ</h1>
+            <h1 class="col-md-12 text-gray-dark mb-4">ΕΠΙΛΟΓΗ ΝΟΣΟΚΟΜΕΙΩΝ</h1>
             <img class="m-auto bg-primary" src="icons/hospital.png" alt="hospital">
         </div>
         <div class="row py-2 px-5">

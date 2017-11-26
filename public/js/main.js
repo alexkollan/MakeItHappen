@@ -91,7 +91,9 @@ var app = {
             if (data.success) {
                 $("#wrapper").append(data.html);
                 $("#to-step-2").hide();
+                $("#to-step-2").parents(".input-group").parent().append('<div class="text-center pt-4"><div class="text-light bg-success d-inline p-2">Λάβατε κωδικό επιβεβαίωσης</div></div>')
                 $("#user_id").attr("disabled", "");
+                
             } else {
                 app.alert(data.description);
             }
@@ -104,7 +106,7 @@ var app = {
         let birth_date = $("#birth-date").val();
         let telephone = $("#telephone").val();
         let profession = $("#profession").val();
-        if (!user_id || vat || amka || birth_date || telephone || profession) {
+        if (!user_id || !vat || !amka || !birth_date || !telephone || !profession) {
             return app.alert("Κάποιο πεδίο είναι άδειο");
         }
         api.getScreen3({
