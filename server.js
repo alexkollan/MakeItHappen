@@ -9,8 +9,10 @@ const screen1 = require('./screen1');
 const screen2 = require('./screen2');
 const screen3 = require('./screen3');
 const screen4 = require('./screen4');
+const screen5 = require('./screen5');
 const screen6 = require('./screen6');
 const screen7 = require('./screen7');
+const screen8 = require('./screen8');
 
 app.listen(port, () => {
     console.log(`The app is running on port: ${port}`);
@@ -26,11 +28,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', index.controller);
 app.get('/screen1', screen1.controller);
-// app.get('/screen2', screen2.controller);
+app.get('/screen2', screen2.controller);
 app.get('/screen3', screen3.controller);
 app.get('/screen4', screen4.controller);
+app.get('/screen5', screen5.controller);
 app.get('/screen6', screen6.controller);
 app.get('/screen7', screen7.controller);
+app.get('/screen8', screen8.controller);
 
 app.post('/screen2', screen2.controller);
 app.post('/screen3', screen3.controller);

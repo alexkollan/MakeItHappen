@@ -147,10 +147,27 @@ var app = {
             }
         })
     },
+    initSlider: function() {
+        $("#selector").slider({
+            range: true,
+            min: 0,
+            max: 100000,
+            step: 1,
+            values: [5000, 30000],
+            slide: function(event, ui) {
+                $("#amount").html("€" + ui.values[0] + " - €" + ui.values[1]);
+            }
+        });
+        $("#amount").html("€" + $("#selector").slider("values", 0) + " - €" + $("#selector").slider("values", 1));
+    },
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
         $("body").on("click", "#to-step-4", app.loadScreen4);
+        // $("body").on("click", "#to-step-5", app.loadScreen5);
+        // $("body").on("click", "#to-step-6", app.loadScreen6);
+        // $("body").on("click", "#to-step-7", app.loadScreen7);
+        // $("body").on("click", "#to-step-8", app.loadScreen8);
         
         // If font awesome icon is clicked toggle the icon appropriately
         $("body").on("click", ".toggle-content", function(){
