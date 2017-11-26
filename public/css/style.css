@@ -70,3 +70,18 @@
     background-color: #0e5c52 !important;
     border-color: #0e5c52 !important;
 }
+
+#cost-cont {
+    position: fixed;
+    top: -0.5rem;
+    left: 1rem;
+    z-index: 9999;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    padding-top: 1rem;
+    font-size: 1.75rem;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.5);
+    color: var(--dark);
+    background-color: var(--light);
+    border: 1px solid var(--dark);
+}

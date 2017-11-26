@@ -93,6 +93,7 @@ var app = {
                 $("#to-step-2").hide();
                 $("#to-step-2").parents(".input-group").parent().append('<div class="text-center pt-4"><div class="text-light bg-success d-inline p-2">Λάβατε κωδικό επιβεβαίωσης</div></div>')
                 $("#user_id").attr("disabled", "");
+                app.changeCost(costos2f(2017 - parseInt(/(\d{4})/g.exec($("#birth-date").val())), 0, 0, 0));
                 
             } else {
                 app.alert(data.description);
@@ -213,9 +214,10 @@ var app = {
             min: 0,
             max: 500000,
             step: 100,
-            values: [5000, 30000],
+            values: [500, 30000],
             slide: function(event, ui) {
                 $("#amount").html("€" + ui.values[0] + " - €" + ui.values[1]);
+                app.changeCost(costos2f(2017 - parseInt(/(\d{4})/g.exec($("#birth-date").val())), ui.values[0], 0, ui.values[1]));
             }
         });
         $("#amount").html("€" + $("#selector").slider("values", 0) + " - €" + $("#selector").slider("values", 1));
@@ -248,6 +250,9 @@ var app = {
         }
     },
     
+    changeCost: function(val){
+        $("#cost-number").html(val);
+    },
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
@@ -299,6 +304,12 @@ var app = {
         $("body").on("click", ".contract-type", function(){
             $(".contract-type").removeClass("btn-primary").addClass("btn-outline-primary");
             $(this).addClass("btn-primary").removeClass("btn-outline-primary");
+            app.changeCost(costos2f(
+                2017 - parseInt(/(\d{4})/g.exec($("#birth-date").val())),
+                $("#selector").slider("values", 0),
+                $(this).html() === "ΕΤΗΣΙΟ" ? 1 : 0,
+                $("#selector").slider("values", 1)
+            ));
         });
     },
     // Function to toggle display of country list div
@@ -321,6 +332,36 @@ var app = {
     }
 };
 
+function costos2(age, posoApalagis, etisiaKalipsi) {
+    return 236 + 653.5 * (Math.exp(0.0206 * age)) - 0.88 * posoApalagis - 239.2 * etisiaKalipsi;
+}
+
+function fadder(orioApalagis) {
+    if (orioApalagis < 15000) {
+        return 0.3;
+    } else if (orioApalagis < 50000) {
+        return 0.55;
+    } else if (orioApalagis < 100000) {
+        return 0.8;
+    } else if (orioApalagis < 300000) {
+        return 0.85;
+    } else if (orioApalagis < 500000) {
+        return 0.9;
+    } else {
+        return 1;
+    }
+}
+
+function costos2f(age, posoApalagis, etisiaKalipsi, orioApalagis) {
+    cost = Math.round(costos2(age, posoApalagis, etisiaKalipsi) * fadder(orioApalagis));
+    if (cost < 150) {
+        cost = 150;
+    }
+    return cost;
+}
+
+
 $(document).ready(function(){
     app.events();
+    app.changeCost(costos2f(0, 0, 0, 0));
 });

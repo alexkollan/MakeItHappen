@@ -29,7 +29,7 @@ module.exports = (req, res) => {
                 </div>
                 <div class="col-md-6 mb-3 text-left">
                     <label class="pl-2">ΗΜΕΡΟΜΗΝΙΑ ΓΕΝΝΗΣΗΣ</label>
-                    <input id="birth-date" type="text" value="01/01/1990" class="form-control" placeholder="Ημερομηνία Γέννησης">
+                    <input id="birth-date" type="text" value="01/01/1980" class="form-control" placeholder="Ημερομηνία Γέννησης">
                 </div>
                 <div class="col-md-6 mb-3 text-left">
                     <label class="pl-2">ΤΗΛΕΦΩΝΟ</label>
