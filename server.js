@@ -39,3 +39,7 @@ app.get('/screen8', screen8.controller);
 app.post('/screen2', screen2.controller);
 app.post('/screen3', screen3.controller);
 app.post('/screen4', screen4.controller);
+app.post('/screen5', screen5.controller);
+app.post('/screen6', screen6.controller);
+app.post('/screen7', screen7.controller);
+app.post('/screen8', screen8.controller);

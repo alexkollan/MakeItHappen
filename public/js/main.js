@@ -147,12 +147,57 @@ var app = {
             }
         })
     },
+    loadScreen5: function(){
+        let hospitals = [];
+        $(".hospital.selected").toArray().forEach(function(hosp){
+            hospitals.push($(hosp).attr("id"));
+        });
+        api.getScreen5({
+            hospitals: hospitals
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-5").hide();
+                app.initSlider();
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
+    loadScreen6: function(){
+        let coverage = {};
+        coverage.min = parseInt($("#selector").slider("values", 0));
+        coverage.max = parseInt($("#selector").slider("values", 1));
+        api.getScreen6({
+            coverage: coverage
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-6").hide();
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
+    loadScreen7: function(){
+        let contract_type = $(".contract-type.btn-primary").html("ΕΤΗΣΙΟ") ? true : false;
+        api.getScreen7({
+            contract_type: contract_type
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-7").hide();
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
     initSlider: function() {
         $("#selector").slider({
             range: true,
             min: 0,
-            max: 100000,
-            step: 1,
+            max: 500000,
+            step: 100,
             values: [5000, 30000],
             slide: function(event, ui) {
                 $("#amount").html("€" + ui.values[0] + " - €" + ui.values[1]);
@@ -164,9 +209,9 @@ var app = {
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
         $("body").on("click", "#to-step-4", app.loadScreen4);
-        // $("body").on("click", "#to-step-5", app.loadScreen5);
-        // $("body").on("click", "#to-step-6", app.loadScreen6);
-        // $("body").on("click", "#to-step-7", app.loadScreen7);
+        $("body").on("click", "#to-step-5", app.loadScreen5);
+        $("body").on("click", "#to-step-6", app.loadScreen6);
+        $("body").on("click", "#to-step-7", app.loadScreen7);
         // $("body").on("click", "#to-step-8", app.loadScreen8);
         
         // If font awesome icon is clicked toggle the icon appropriately
@@ -205,6 +250,12 @@ var app = {
         // If select all button is clicked, select all hospitals
         $("body").on("click", "#select-all-hospitals", function(){
             $(".hospital").addClass("selected");
+        });
+        
+        
+        $("body").on("click", ".contract-type", function(){
+            $(".contract-type").removeClass("btn-primary").addClass("btn-outline-primary");
+            $(this).addClass("btn-primary").removeClass("btn-outline-primary");
         });
     },
     // Function to toggle display of country list div
