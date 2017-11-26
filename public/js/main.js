@@ -30,6 +30,41 @@ var api = {
             data: data
         }, callback);
     },
+    getScreen4: function (data, callback) {
+        this.ajax({
+            url: "/screen4",
+            method: "POST",
+            data: data
+        }, callback);
+    },
+    getScreen5: function (data, callback) {
+        this.ajax({
+            url: "/screen5",
+            method: "POST",
+            data: data
+        }, callback);
+    },
+    getScreen6: function (data, callback) {
+        this.ajax({
+            url: "/screen6",
+            method: "POST",
+            data: data
+        }, callback);
+    },
+    getScreen7: function (data, callback) {
+        this.ajax({
+            url: "/screen7",
+            method: "POST",
+            data: data
+        }, callback);
+    },
+    getScreen8: function (data, callback) {
+        this.ajax({
+            url: "/screen8",
+            method: "POST",
+            data: data
+        }, callback);
+    },
 };
 
 var app = {
@@ -82,7 +117,7 @@ var app = {
         }, function(data){
             if (data.success) {
                 $("#wrapper").append(data.html);
-                $("#to-step-2").hide();
+                $("#to-step-3").hide();
                 $("#name").attr("disabled", "");
                 $("#vat").attr("disabled", "");
                 $("#amka").attr("disabled", "");
@@ -94,9 +129,28 @@ var app = {
             }
         })
     },
+    loadScreen4: function(){
+        let countries = [];
+        $(".country:checked").toArray().forEach(function(country){
+            countries.push($(country).attr("id"));
+        });
+        api.getScreen4({
+            countries: countries
+        }, function(data){
+            if (data.success) {
+                $("#wrapper").append(data.html);
+                $("#to-step-4").hide();
+                $(".country").attr("disabled", "");
+                $(".check-all-countries").attr("disabled", "");
+            } else {
+                app.alert(data.description);
+            }
+        })
+    },
     events: function(){
         $("body").on("click", "#to-step-2", app.loadScreen2);
         $("body").on("click", "#to-step-3", app.loadScreen3);
+        $("body").on("click", "#to-step-4", app.loadScreen4);
         
         // If font awesome icon is clicked toggle the icon appropriately
         $("body").on("click", ".toggle-content", function(){
@@ -132,7 +186,7 @@ var app = {
             $(this).toggleClass("selected");
         });
         // If select all button is clicked, select all hospitals
-        $("#select-all-hospitals").on("click", function(){
+        $("body").on("click", "#select-all-hospitals", function(){
             $(".hospital").addClass("selected");
         });
     },

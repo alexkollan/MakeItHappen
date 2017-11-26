@@ -45,8 +45,8 @@ module.exports = (req, res) => {
                 <div class="country-list offset-md-1 col-md-11 d-flex flex-wrap text-left hidden">
                     <% for(var i=0; i < countries[continent].length; i++) { %>
                         <div class="col-md-3">
-                            <input id="country-<%= continent %>-<%= i %>" class="country" type="checkbox">
-                            <label for="country-<%= continent %>-<%= i %>"><%= countries[continent][i] %></label>
+                            <input id="<%= countries[continent][i] %>" class="country" type="checkbox">
+                            <label for="<%= countries[continent][i] %>"><%= countries[continent][i] %></label>
                         </div>
                     <% } %>
                 </div>

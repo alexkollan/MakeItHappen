@@ -32,13 +32,13 @@
     background-color: white;
     color: #1c1c1c;
     padding: 0.5rem;
-    border: 1px solid var(--info);
+    border: 1px solid var(--primary);
     border-radius: 0.25rem;
     transition: all 0.15s;
     cursor: default;
     user-select: none;
 }
 .hospital.selected {
-    background-color: var(--info);
+    background-color: var(--primary);
     color: white;
 }
