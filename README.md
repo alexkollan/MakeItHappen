@@ -3,22 +3,22 @@
 
 ### Team Members ([More](https://docs.google.com/presentation/d/1WcrVfwK0GRU0sEvnCefcksnkX3QAjztL_tYRKeVKWQA/edit#slide=id.g35f391192_00))
 [Αμπατζή Νεφέλη](https://www.linkedin.com/in/%CE%BD%CE%B5%CF%86%CE%AD%CE%BB%CE%B7-%CE%B1%CE%BC%CF%80%CE%B1%CF%84%CE%B6%CE%AE-5b17b291/) - Προγραμματίστρια με κατεύθυνση προς το **Front-end Web Development** <br />
-[Kollan Alex](https://www.linkedin.com/in/alexkollan/) - **Project Manager** - Computer Scientist (BSc., MSc.) με ενδιαφέρον σε Πολυπρακτορικά Συστήματα & Web Development <br />
+[Κολλάν (Collin) Αλέξανδρος](https://www.linkedin.com/in/alexkollan/) - **Project Manager** - Computer Scientist (BSc., MSc.) με ενδιαφέρον στα Πολυπρακτορικά Συστήματα & Web Development <br />
 [Κωνσταντινίδης Νίκος](https://www.linkedin.com/in/nickoskonstant/) - **Mathematician/Statistician**, Data Science Enthusiast, Developer <br />
 [Λεοντακιανάκος Αλέξανδρος](https://www.linkedin.com/in/alexandros-leontakianakos/) - Προγραμματιστής με κύρια δραστηριότητα στο **Front - end Web Development** <br />
 Μασσάαντ Δημήτρης - Προγραμματιστής, **Back End Developer** <br />
 [Πλαβός Βασίλης](https://www.linkedin.com/in/vasilisplavos/) - **Innovation Manager** - Ασφαλιστικός Σύμβουλος, Εθνική Ασφ. & Digital Marketeer, BCLA Δικηγορική <br />
 
 ### Λίγα Λόγια
-Καλησπέρα, είμαστε η ομάδα **MakeItHappen** και αυτό είναι το **SURE**, Μία Πολυμορφική Πλατφόρμα Κοστολόγησης, Underwriting & Instant Ασφάλισης για την Ασφάλιση Υγείας, Ένα A-I-O Solution. **Υποστηρίξτε** την Ιδέα μας και δώστε μας την Ευκαιρία να **ελαφρύνουμε οικονομικά την Εταιρία σας**. ([email](mailto:vplavos@gmail.com))
+Καλησπέρα, είμαστε η ομάδα **MakeItHappen** και αυτό είναι το **SURE**, Μία Πολυμορφική Πλατφόρμα Κοστολόγησης, Underwriting & Instant Ασφάλισης για την Ασφάλιση Υγείας, Ένα A-I-O Solution. **Υποστηρίξτε** την Ιδέα μας και δώστε μας την Ευκαιρία να **ελαφρύνουμε οικονομικά την Εταιρεία σας**. ([email](mailto:vplavos@gmail.com))
 
 ### Που απευθύνετε το SURE
-- Ασφαλιστικές Εταιρίες
+- Ασφαλιστικές Εταιρείες
 - Ασφαλιστικούς Διαμεσολαβητές
 - Brokers
 
 ### Τι κάνει
-- Επικεντρώνετε στον Κλάδο Υγείας
+- Επικεντρώνεται στον Κλάδο Υγείας
 - Βελτιστοποιεί την διαδικασία της Ασφάλισης
 - Πετυχαίνει Αίτηση Ασφάλισης, Underwriting & Διαδικασία  Προασφαλιστικού Ελέγχου (αν χρειαστεί) αλλιώς Προκύπτει Εκτύπωση Συμβολαίου και Πληρωμή Αυτού Instantly
 - Βελτιστοποιεί το Underwriting
@@ -32,7 +32,7 @@
 - Back-end: EJS, NodeJS, ExpressJS, MongoDB, **Blockchain** (Hyperledger-fabric)
 - **Ποσοστό Υλοποίησης Prototype 80% - Δυνατότητα Παράδοσης Προϊόντος σε 2 Βδομάδες**
 
-### Γιατί οι Ασφαλιστικές Εταιρίες μας Χρειάζονται Σήμερα
+### Γιατί οι Ασφαλιστικές Εταιρείες μας Χρειάζονται Σήμερα
 - All In One Solution
 - **Ελαχιστοποίηση Διαχειριστικών Εξόδων**
 - **Ασφάλεια στο Λεπτό**
@@ -41,7 +41,7 @@
 - **Τεχνολογία Ικανή** να τρέξει παντού (και σε **ChatBots**)
 - Έξυπνες Φόρμες (καλύτερη στόχευση)
 
-### Γιατί οι Ασφαλιστικές Εταιρίες μας Χρειάζονται Για Πάντα
+### Γιατί οι Ασφαλιστικές Εταιρείες μας Χρειάζονται Για Πάντα
 - Αξιοποίηση των Data
 - **Flexible Συμβόλαια** στα μέτρα του Πελάτη
 - Νέα Μοντέλα Ασφάλισης (και για ευπαθείς ομάδες)
